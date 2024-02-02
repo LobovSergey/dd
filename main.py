@@ -1,5 +1,6 @@
 from itertools import permutations
-import pandas as pd
+import numpy as np
+
 
 
 CLASS_ONE_LIST = ['1a', '2b', '3a']
@@ -22,6 +23,7 @@ def permutation_lessons(types_class, repeats, max_hours):
 
 def combine_teachers_lessons(first_combinations, second_combinations, result: list = []):
     for i in first_combinations:
+        res = []
         for j in second_combinations:
             counter = 0
             for index in range(HOURS):
@@ -29,8 +31,13 @@ def combine_teachers_lessons(first_combinations, second_combinations, result: li
                     if (i[index] is not None) and (j[index] is not None):
                         break
                 counter += 1
-            # if counter == HOURS:
-            #     print(pd.array(i, j))
+            if counter == HOURS:
+                res.append(i)
+                res.append(j)
+        if res:
+            result.append(res)
+    return result
+    
 
 
 f_teacher = permutation_lessons(
@@ -40,4 +47,5 @@ s_teacher = permutation_lessons(
 
 
 result_combinations = combine_teachers_lessons(f_teacher, s_teacher)
-print(pd.array())
+print(len(result_combinations))
+
