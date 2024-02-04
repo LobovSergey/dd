@@ -1,57 +1,73 @@
-# from itertools import permutations
-# import numpy as np
+from itertools import permutations
+from math import factorial
+from random import randint
+import numpy as np
 
+max_hours = 5
+max_teachers = 5
+TEST_CASE = [[1,2,3],[2,1,3],[3,2,1]]
 
-
-# CLASS_ONE_LIST = ['1a', '2b', '3a']
-# CLASS_TWO_LIST = ['1b', '3a']
-# HOURS = 7
-# REPEATS_ONE_LIST = [2, 2, 1]
-# REPEATS_TWO_LIST = [2, 2]
-
-
-# def permutation_lessons(types_class, repeats, max_hours):
-#     all = list(zip(types_class, repeats))
-#     week_lessons = [x[0] for x in all for _ in range(x[1])]
-
-#     while len(week_lessons) != max_hours:
-#         week_lessons.append(None)
-
-#     x = permutations(week_lessons)
-#     return list(x)
-
-
-# def combine_teachers_lessons(first_combinations, second_combinations, result: list = []):
-#     for i in first_combinations:
-#         res = []
-#         for j in second_combinations:
-#             counter = 0
-#             for index in range(HOURS):
-#                 if i[index] == j[index]:
-#                     if (i[index] is not None) and (j[index] is not None):
-#                         break
-#                 counter += 1
-#             if counter == HOURS:
-#                 res.append(i)
-#                 res.append(j)
-#         if res:
-#             result.append(res)
-#     return result
+def prepare_data():
+    global len_permutation 
+    global lessons_list   
+    global head_combination
+    lessons_list = [[randint(0,5) for _ in range(max_hours)] for _ in range(max_teachers)]
+    # lessons_list = TEST_CASE
+    len_permutation = factorial(max_hours)
+    head_lessons = lessons_list[0]
+    head_combination = permutations(head_lessons)
+    # list_permutations = [permutations(teacher_class) for teacher_class in lessons_list]
     
 
 
-# f_teacher = permutation_lessons(
-#     types_class=CLASS_ONE_LIST, repeats=REPEATS_ONE_LIST, max_hours=HOURS)
-# s_teacher = permutation_lessons(
-#     types_class=CLASS_TWO_LIST, repeats=REPEATS_TWO_LIST, max_hours=HOURS)
 
 
-# result_combinations = combine_teachers_lessons(f_teacher, s_teacher)
-# print(len(result_combinations))
 
-import numpy as np
- 
-a = np.array([[1,2,3],[4,5,6],[7,8,9],[1,1,0]])
-print(a)
-b = a[:-1:]
-print(b)
+def head_call():
+    try:
+        head = head_combination.__next__()  
+        return head     
+
+    except StopIteration:
+        raise StopIteration(f'we dont have combinations with {[print(i) for i in lessons_list]}') 
+        
+
+
+def combinate(head_combination, *lessons):                
+        unpacked_lessons = lessons[0]
+        lesson = unpacked_lessons[0] 
+        iteration = permutations(lesson)            
+        for _ in range(len_permutation):
+            candidate_row = np.array(list(iteration.__next__()))        
+            res_bool = np.equal(head_combination, candidate_row) 
+            unique_bool = np.unique(res_bool)
+            if unique_bool.size == 1 and not unique_bool[0]:
+                finded_combination = np.vstack([head_combination, candidate_row])
+                main_combination = finded_combination
+                if len(unpacked_lessons) != 1:
+                    result = combinate(finded_combination, unpacked_lessons[1:])
+                    if type(result) == tuple:
+                        head_combination = main_combination[:-1:]                         
+                        continue
+                    return result                       
+                return main_combination
+        return (head_combination, 0)
+            
+def main():                
+    while True:
+        head = head_call()
+        main_combination = combinate(head, lessons_list[1:])
+        if type(main_combination) == tuple:
+            continue
+        break
+    return main_combination
+
+def print_result(result):
+    print(result)
+
+
+
+if __name__ == "__main__":
+    prepare_data()
+    result = main()
+    print_result(result)
