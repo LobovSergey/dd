@@ -27,7 +27,7 @@ def chance_combination(l1, l2):
         if search(i, l2):
             count += 1
 
-
+ 
 for _ in range(1):
     # l = [[randint(0, 9) for _ in range(max_hours)]
     #      for _ in range(max_teachers)]
@@ -35,7 +35,7 @@ for _ in range(1):
     # jll = list(map(lambda x : sorted(x), l))
     # l = np.array([*jll])
     l1 = [1, 3, 2, 4]
-    l2 = [1, 4, 1, 4]
+    l2 = [1, 4, 1, 4] 
     l1_p = list(permutations(l1))
 
     print(len(set(l1)), "uniq")

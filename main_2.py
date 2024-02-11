@@ -2,7 +2,7 @@ from random import randint
 import numpy as np
 import time
 from data import *
-
+ 
 now = time.time()
 LONG = 35
 DEEP = 17

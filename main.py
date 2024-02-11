@@ -47,7 +47,7 @@ def head_call():
         head = head_combination.__next__()
         return head
     except StopIteration:
-        return None
+        return None 
 
 
 def combinate(head_combination, *lessons):
