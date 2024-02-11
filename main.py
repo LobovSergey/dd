@@ -1,21 +1,25 @@
 from itertools import permutations
 from math import factorial
-from random import choice, randint, shuffle
+from random import randint
 import numpy as np
+from math import trunc
+
 import time
 
-max_hours = 5
-max_teachers = 5
-TEST_CASE = [[10, 8, 8], [6, 6, 8], [4, 6, 8]]
-# np.array(list(iteration.__next__()))
+max_hours = 4
+max_teachers = 4
+TEST_CASE = [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
 
 
 def prepare_data():
     global len_permutation
     global lessons_list
     global head_combination
-    lessons_list = [[randint(0, 8) for _ in range(max_hours)]
-                    for _ in range(max_teachers)]
+    # lessons_input = [[randint(0, 8) for _ in range(max_hours)]
+    #                  for _ in range(max_teachers)]
+    lessons_input = TEST_CASE
+    lessons_list = list(map(lambda x: sorted(x), lessons_input))
+    lessons_list.sort()
     # lessons_list = TEST_CASE
     len_permutation = factorial(max_hours)
     head_lessons = lessons_list[0]
@@ -23,8 +27,19 @@ def prepare_data():
     # list_permutations = [permutations(teacher_class) for teacher_class in lessons_list]
 
 
-def coefficients(item_1, item_2):
-    bool_list = np.equal(item_1, item_2)
+def skipper(index, iter, flag, frame_index):
+    if index != frame_index:
+        iter.__next__()
+        return
+    flag = True
+
+
+def frame_finder(b_list: list[bool]):
+    ki = 1
+    if b_list[0]:
+        ki = 1 / max_hours
+        return trunc(len_permutation * ki)
+    return 1
 
 
 def head_call():
@@ -39,10 +54,15 @@ def combinate(head_combination, *lessons):
     print('ПРИШОЛ')
     unpacked_lessons = lessons[0]
     lesson = unpacked_lessons[0]
-    iteration = list(permutations(lesson))
-    for _ in range(len_permutation):
-        candidate_row = choice(iteration)
+    iterations = permutations(lesson)
+    flag = True
+    for index in range(len_permutation):
+        if not flag:
+            skipper(index, iterations, flag, frame)
+            continue
+        candidate_row = iterations.__next__()
         res_bool = np.equal(head_combination, candidate_row)
+        frame_finder(res_bool)
         unique_bool = np.unique(res_bool)
         if unique_bool.size == 1 and not unique_bool[0]:
             finded_combination = np.vstack([head_combination, candidate_row])
@@ -74,6 +94,9 @@ if __name__ == "__main__":
     now = time.time()
     prepare_data()
     result = main()
+
     print(result)
+
     last = time.time()
+
     print(1000*(last-now))
