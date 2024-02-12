@@ -1,7 +1,9 @@
-import numpy
+dic = {
+    "a": 3,
+    "c": 1,
+    "ASD": 9
+}
 
 
-k = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-l = numpy.array([k])
-
-print()
+r = [key for key, val in dic.items() for _ in range(val)]
+print(r)
