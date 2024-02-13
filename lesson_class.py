@@ -16,8 +16,8 @@ class Lesson:
     lessons_list: list = field(default_factory=list)
     hours: int = 0
 
-    # def __repr__(self):
-    #     return f"{self.lessons_list}"
+    def __repr__(self):
+        return f"{self.teacher}"
 
     def get_lessons(self):
         return self.lessons

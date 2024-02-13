@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, shuffle
 import numpy as np
 import time
 from data import *
@@ -12,13 +12,15 @@ CASE = np.array(RANDOM_CASE)
 DEEP = len(TEST_CASE)
 
 
-def search(head=[], i=0):
+
+def search(head=[], i=1):
     print(f"CURRENT {i}")
-    shedule = TEST_CASE[i].lessons_list
-    for _ in range(COUNTER):
+    shedule = TEST_CASE[i-1].lessons_list
+    C = COUNTER * i * i
+    for _ in range(C):
         np.random.shuffle(shedule)
         print(f"SEARCHED {i+1}")
-        if i == 0:
+        if i == 1:
             response = search(head=shedule, i=i+1)
             if type(response) is not tuple:
                 return response
@@ -27,12 +29,14 @@ def search(head=[], i=0):
             result_uni = np.unique(result_b)
             if len(result_uni) and result_uni[0]:
                 combination = np.vstack([head, shedule])
-                if i == DEEP - 1:
+                if i == DEEP:
                     return combination
                 result = search(i=i+1, head=combination)
                 if type(result) is tuple:
                     continue
                 return result
+        if _ > (0.2 * C):
+            break
     return (None, False)
 
 

@@ -1,11 +1,232 @@
 {
 	"teachers": [
 		{
+			"id": 47,
+			"info": {
+				"name": "Лобова А.А.",
+				"group": false,
+				"discipline": "Русский",
+				"lessons": {
+					"6b": 9
+				}
+			}
+		},
+		{
+			"id": 41,
+			"info": {
+				"name": "Ени Т.В.",
+				"group": false,
+				"discipline": "Русский",
+				"lessons": {
+					"10b": 6,
+					"6c": 9,
+					"6d": 9
+				}
+			}
+		},
+		{
+			"id": 44,
+			"info": {
+				"name": "Антонова В.В.",
+				"group": false,
+				"discipline": "Русский",
+				"lessons": {
+					"5b": 3,
+					"9b": 6
+				}
+			}
+		},
+		{
+			"id": 34,
+			"info": {
+				"name": "Лехницкая М.А.",
+				"group": false,
+				"discipline": "Русский",
+				"lessons": {
+					"10a": 5,
+					"5c": 3,
+					"7b": 6,
+					"7c": 6
+				}
+			}
+		},
+		{
+			"id": 45,
+			"info": {
+				"name": "Романова Н.С.",
+				"group": false,
+				"discipline": "Русский",
+				"lessons": {
+					"5a": 9,
+					"6a": 9
+				}
+			}
+		},
+		{
+			"id": 35,
+			"info": {
+				"name": "Белаш Е.В.",
+				"group": false,
+				"discipline": "Русский",
+				"lessons": {
+					"11a": 5,
+					"11b": 5,
+					"9a": 6,
+					"9c": 6
+				}
+			}
+		},
+		{
+			"id": 42,
+			"info": {
+				"name": "Быстрицкая М.А.",
+				"group": false,
+				"discipline": "Русский",
+				"lessons": {
+					"8a": 6,
+					"8b": 6,
+					"8c": 6
+				}
+			}
+		},
+		{
+			"id": 36,
+			"info": {
+				"name": "Манайчева Е.А.",
+				"group": false,
+				"discipline": "Русский",
+				"lessons": {
+					"5b": 6,
+					"5c": 6,
+					"7a": 6,
+					"7d": 6
+				}
+			}
+		},
+		{
+			"id": 37,
+			"info": {
+				"name": "VACANCY",
+				"group": false,
+				"discipline": "Математика",
+				"lessons": {
+					"6c": 5,
+					"6d": 5,
+					"7a": 6,
+					"7d": 6
+				}
+			}
+		},
+		{
+			"id": 38,
+			"info": {
+				"name": "Овчарова Ю.А.",
+				"group": false,
+				"discipline": "Математика",
+				"lessons": {
+					"10a": 8,
+					"7c": 6,
+					"9b": 6,
+					"9c": 6
+				}
+			}
+		},
+		{
+			"id": 31,
+			"info": {
+				"name": "Храмцова В.В.",
+				"group": false,
+				"discipline": "Математика",
+				"lessons": {
+					"11a": 7,
+					"5b": 5,
+					"6b": 5,
+					"7b": 6,
+					"9a": 3
+				}
+			}
+		},
+		{
+			"id": 39,
+			"info": {
+				"name": "Мельникова И.Н.",
+				"group": false,
+				"discipline": "Математика",
+				"lessons": {
+					"10b": 5,
+					"5a": 5,
+					"8a": 6,
+					"8b": 6
+				}
+			}
+		},
+		{
+			"id": 32,
+			"info": {
+				"name": "Сысоева С.Б.",
+				"group": false,
+				"discipline": "Математика",
+				"lessons": {
+					"11b": 6,
+					"5c": 5,
+					"6a": 5,
+					"8c": 6,
+					"9a": 3
+				}
+			}
+		},
+		{
+			"id": 19,
+			"info": {
+				"name": "Варусон Т.А.",
+				"group": false,
+				"discipline": "История",
+				"lessons": {
+					"5a": 2,
+					"5b": 2,
+					"5c": 2,
+					"6a": 2,
+					"6b": 2,
+					"6c": 2,
+					"6d": 2,
+					"7a": 2,
+					"7c": 2
+				}
+			}
+		},
+		{
+			"id": 43,
+			"info": {
+				"name": "Кулагина Н.И.",
+				"group": false,
+				"discipline": "География",
+				"lessons": {
+					"9a": 2,
+					"9b": 2,
+					"9c": 2
+				}
+			}
+		},
+		{
+			"id": 40,
+			"info": {
+				"name": "Платонова О.А.",
+				"group": false,
+				"discipline": "История",
+				"lessons": {
+					"10a": 2,
+					"10b": 2,
+					"9a": 3,
+					"9b": 3
+				}
+			}
+		},
+		{
 			"id": 1,
 			"info": {
-				"name": "teacher 1",
+				"name": "Корнилов В.С.",
 				"group": false,
-				"discipline": null,
+				"discipline": "Музыка",
 				"lessons": {
 					"1a": 1,
 					"1b": 1,
@@ -38,9 +259,9 @@
 		{
 			"id": 2,
 			"info": {
-				"name": "teacher 2",
+				"name": "Юшкова Н.Н.",
 				"group": false,
-				"discipline": null,
+				"discipline": "География",
 				"lessons": {
 					"10a": 1,
 					"10b": 1,
@@ -62,26 +283,181 @@
 			}
 		},
 		{
-			"id": 3,
+			"id": 5,
 			"info": {
-				"name": "teacher 3",
-				"group": false,
-				"discipline": null,
+				"name": "Степанова В.А.",
+				"group": true,
+				"discipline": "Технология",
 				"lessons": {
-					"10a": 5,
-					"10b": 1,
-					"11a": 4,
-					"11b": 2,
+					"5a": 2,
+					"5b": 2,
+					"5c": 2,
+					"6a": 2,
+					"6b": 2,
+					"6c": 2,
+					"6d": 2,
 					"7a": 2,
 					"7b": 2,
 					"7c": 2,
 					"7d": 2,
 					"8a": 1,
 					"8b": 1,
+					"8c": 1
+				}
+			}
+		},
+		{
+			"id": 9,
+			"info": {
+				"name": "Кудрявцева Е.В.",
+				"group": false,
+				"discipline": "ИЗО",
+				"lessons": {
+					"2c": 1,
+					"5a": 1,
+					"5b": 1,
+					"5c": 1,
+					"6a": 1,
+					"6b": 1,
+					"6c": 1,
+					"6d": 1,
+					"7a": 1,
+					"7b": 1,
+					"7c": 1,
+					"7d": 1
+				}
+			}
+		},
+		{
+			"id": 13,
+			"info": {
+				"name": "Ромодина Т.В.",
+				"group": false,
+				"discipline": "История",
+				"lessons": {
+					"11a": 2,
+					"11b": 2,
+					"6a": 1,
+					"6b": 1,
+					"6c": 1,
+					"6d": 1,
+					"7b": 2,
+					"8a": 2,
+					"8b": 2,
+					"8c": 2
+				}
+			}
+		},
+		{
+			"id": 16,
+			"info": {
+				"name": "Самарцев А.И.",
+				"group": false,
+				"discipline": "ОБЖ",
+				"lessons": {
+					"10a": 1,
+					"10b": 1,
+					"11a": 1,
+					"11b": 1,
+					"8a": 1,
+					"8b": 1,
 					"8c": 1,
 					"9a": 1,
 					"9b": 1,
 					"9c": 1
+				}
+			}
+		},
+		{
+			"id": 17,
+			"info": {
+				"name": "Сергеева В.Д.",
+				"group": false,
+				"discipline": "Физкультура",
+				"lessons": {
+					"10a": 2,
+					"2a": 3,
+					"2d": 3,
+					"4a": 2,
+					"4b": 2,
+					"5a": 2,
+					"5c": 2,
+					"6c": 2,
+					"6d": 2,
+					"7c": 2
+				}
+			}
+		},
+		{
+			"id": 22,
+			"info": {
+				"name": "Белохвостик Ю.А.",
+				"group": false,
+				"discipline": "Физкультура",
+				"lessons": {
+					"1c": 3,
+					"3a": 3,
+					"3c": 3,
+					"5b": 2,
+					"6a": 2,
+					"7a": 2,
+					"8a": 2,
+					"8c": 2,
+					"9a": 2
+				}
+			}
+		},
+		{
+			"id": 20,
+			"info": {
+				"name": "Бабайкина Д.Г.",
+				"group": false,
+				"discipline": "Физкультура",
+				"lessons": {
+					"10b": 2,
+					"11a": 3,
+					"11b": 3,
+					"1b": 3,
+					"2c": 3,
+					"3b": 3,
+					"4c": 2,
+					"8b": 2,
+					"9b": 2
+				}
+			}
+		},
+		{
+			"id": 30,
+			"info": {
+				"name": "Бушина Ю.А.",
+				"group": false,
+				"discipline": "Немецкий",
+				"lessons": {
+					"8a": 2,
+					"8b": 2,
+					"8c": 2,
+					"9a": 1,
+					"9b": 1,
+					"9c": 1
+				}
+			}
+		},
+		{
+			"id": 21,
+			"info": {
+				"name": "Петрова Л.Н.",
+				"group": false,
+				"discipline": "Физкультура",
+				"lessons": {
+					"10b": 2,
+					"11a": 3,
+					"1a": 3,
+					"2b": 3,
+					"3d": 3,
+					"6b": 2,
+					"7b": 2,
+					"7d": 2,
+					"9c": 2
 				}
 			}
 		}

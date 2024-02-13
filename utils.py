@@ -3,7 +3,7 @@ from data import LONG
 from lesson_class import Lesson
 
 
-with open('data.json', "r", encoding="UTF-8") as f:
+with open('data_test.json', "r", encoding="UTF-8") as f:
 
     file = json.load(f)
 
@@ -23,4 +23,8 @@ teachers_data = [
 for i in teachers_data:
     i.setup_data()
 
-teachers_data.sort(key=lambda x: x.hours, reverse=True)
+teachers_data.sort(key=lambda x: x.hours, reverse=False)
+
+print(len(teachers_data))
+print(teachers_data)
+
